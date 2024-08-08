@@ -1,6 +1,7 @@
 import pygame
 
 class Ufo:
+    """A class to manage the ufo."""
     def __init__(self, bb_game):
         """Initialize the ufo and set its starting position."""
         self.screen = bb_game.screen
