@@ -10,3 +10,6 @@ class Settings:
 
         # Ship settings
         self.ship_speed = 1.5
+
+        # Rocket settings
+        self.rocket_speed = 1.5
