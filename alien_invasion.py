@@ -4,7 +4,6 @@ import pygame
 
 from settings import Settings
 from ship import Ship
-from ufo import Ufo
 from bullet import Bullet
 
 class AlienInvasion:
@@ -27,7 +26,6 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion")
 
         self.ship = Ship(self)
-        self.ufo = Ufo(self)
         self.bullets = pygame.sprite.Group()
 
     def run_game(self):
@@ -90,7 +88,6 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.ship.blitme()
-        self.ufo.blitme()
 
         pygame.display.flip()
 
