@@ -87,6 +87,12 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
+        # Check for any bullets that have hit aliens.
+        #   If so, get rid of the bullet and the alien.
+        collisions = pygame.sprite.groupcollide(
+            self.bullets, self.aliens, True, True
+        )
+
     def _create_fleet(self):
         """Create the fleet of aliens."""
         # Create an alien and keep adding aliens until there's no room left.
@@ -113,11 +119,6 @@ class AlienInvasion:
         self.aliens.add(new_alien)
 
     def _update_aliens(self):
-<<<<<<< HEAD
-        """Update the positions of all alien in the fleet."""
-        self.aliens.update()
-
-=======
         """Check if the fleet is at an edge, then update the positions."""
         self._check_fleet_edges()
         self.aliens.update()
@@ -135,7 +136,6 @@ class AlienInvasion:
             alien.rect.y += self.settings.fleet_drop_speed
         self.settings.fleet_direction *= -1
 
->>>>>>> 2935120bcd2fd92ec69bc9852dd2ab4a696689be
     def _update_screen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
